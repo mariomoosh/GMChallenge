@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "GMChallenge",
+    "slug": "GMChallenge",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "GMChallenge"
+}
