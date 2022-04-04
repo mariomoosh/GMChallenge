@@ -1,58 +1,18 @@
-import { StatusBar } from 'expo-status-bar';
-import React,{useState} from 'react';
-import { SafeAreaView, FlatList, StyleSheet, Text, View } from 'react-native';
 
-const Item = ({ title }) => (
-  <View style={styles.item}>
-    <Text style={styles.title}>{title}</Text>
-  </View>
-);
+import React from 'react';
+import Welcome from './src/views/welcome';
+import CommitsList from './src/components/commits-list';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+const Stack = createNativeStackNavigator();
 export default function App() {
-  const [commits,setCommits] = useState([
-    {
-      id: '1',
-      title: 'First Item',
-    },
-    {
-      id: '2',
-      title: 'Second Item',
-    },
-    {
-      id: '3',
-      title: 'Third Item',
-    },
-  ])
-  const renderItem = ({ item }) => (
-    <Item title={item.title} />
-  );
   return (
-    <SafeAreaView style={styles.container}>
-      <Text style={styles.header}>GM Coding Challenge</Text>
-      <FlatList
-        data={commits}
-        renderItem={renderItem}
-        keyExtractor={item => item.id}
-      />
-    </SafeAreaView>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Welcome">
+        <Stack.Screen name="Welcome" component={Welcome} />
+        <Stack.Screen name="Commits" component={CommitsList} />
+      </Stack.Navigator>  
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    marginTop: StatusBar.currentHeight || 0,
-  },
-  item: {
-    backgroundColor: '#f9c2ff',
-    padding: 20,
-    marginVertical: 8,
-    marginHorizontal: 16,
-  },
-  title: {
-    fontSize: 32,
-  },
-  header:{
-    fontSize:40,
-    fontWeight: 'bold'
-  }
-});
