@@ -1,13 +1,14 @@
 import React,{useState} from "react";
 import { StatusBar } from "expo-status-bar";
-import {Text, View, StyleSheet,SafeAreaView,FlatList } from "react-native";
+import {Text, View, StyleSheet,SafeAreaView,FlatList,TouchableOpacity } from "react-native";
+
 
 const Item = ({ title }) => (
     <View style={styles.item}>
       <Text style={styles.title}>{title}</Text>
     </View>
   );
-const CommitsList = ()=>{
+const CommitsList = ({navigation})=>{
     const [commits,setCommits] = useState([
         {
           id: '1',
@@ -21,9 +22,15 @@ const CommitsList = ()=>{
           id: '3',
           title: 'Third Item',
         },
-      ])
+    ]);
+    
     const renderItem = ({ item }) => (
-        <Item title={item.title} />
+        <TouchableOpacity onPress={()=>{
+                                    navigation.push("CommitDetail",item);
+                                }}>
+            <Item title={item.title} />
+        </TouchableOpacity>
+        
       );
     return (
         <SafeAreaView style={styles.container}>
