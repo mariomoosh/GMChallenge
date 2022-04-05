@@ -1,10 +1,15 @@
 import React from "react";
 import { View,Text } from "react-native";
+import styles
+ from "../styles/commonStyles";
+ 
 const CommitDetail = ({route,navigation}) =>{
-    console.log(route.params);
+    
     return (
-        <View>
-            <Text>nada</Text>
+        <View style={styles.cdetail}>
+            <Text>Hash</Text>
+            <Text>Author</Text>            
+            <Text>Message</Text>
         </View>
     )
 }

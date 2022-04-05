@@ -23,6 +23,10 @@ const CommitsList = ({navigation})=>{
           title: 'Third Item',
         },
     ]);
+
+    const getCommits = ()=>{
+      
+    }
     
     const renderItem = ({ item }) => (
         <TouchableOpacity onPress={()=>{

@@ -28,6 +28,22 @@ public class MainActivity extends ReactActivity {
     return "main";
   }
 
+  //  @Override
+  //   protected List<ReactPackage> getPackages() {
+  //     return Arrays.<ReactPackage>asList(
+  //         new MainReactPackage(),
+  //           new AsyncStoragePackage(),
+  //           new RNFirebasePackage(),
+  //           new RNFirebaseFirestorePackage(),
+  //           new RNFirebaseLinksPackage(),
+  //           new RNFirebaseAuthPackage(),
+  //           new ReanimatedPackage(),
+  //           new RNGestureHandlerPackage(),
+  //           new RNScreensPackage(),
+  //           new SafeAreaContextPackage()
+  //     );
+  //   }
+
   @Override
   protected ReactActivityDelegate createReactActivityDelegate() {
     return new ReactActivityDelegateWrapper(this,
