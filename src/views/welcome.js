@@ -33,5 +33,5 @@ const styles = StyleSheet.create({
         heigth:"100",
         margin:"10"
     }
-  });
+});
 export default Welcome;
