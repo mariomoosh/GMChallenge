@@ -11,9 +11,9 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Welcome">
-        <Stack.Screen name="Welcome" component={Welcome} />
-        <Stack.Screen name="Commits" component={CommitsList} />
-        <Stack.Screen name="CommitDetail" component={CommitDetail} />
+        <Stack.Screen name="Welcome" options={{title:"Home"}} component={Welcome} />
+        <Stack.Screen name="Commits" options={{title:"Commits List"}} component={CommitsList} />
+        <Stack.Screen name="CommitDetail" options={{title:"Commit Detail"}} component={CommitDetail} />
       </Stack.Navigator>  
     </NavigationContainer>
   );
