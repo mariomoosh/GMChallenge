@@ -15,7 +15,7 @@ export default function App() {
         <Stack.Screen name="Welcome" options={{title:"Home"}} component={Welcome} />
         <Stack.Screen name="Commits" options={{title:"Commits List"}} component={CommitsList} />
         <Stack.Screen name="CommitDetail" options={{title:"Commit Detail"}} component={CommitDetail} />
-      </Stack.Navigator>  
+      </Stack.Navigator>
     </NavigationContainer>
   );
 }
