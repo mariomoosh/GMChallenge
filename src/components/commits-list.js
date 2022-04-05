@@ -10,23 +10,11 @@ const Item = ({ title }) => (
   );
 
 const CommitsList = ({navigation})=>{
-    const [commits,setCommits] = useState([
-        {
-          id: '1',
-          title: 'First Item',
-        },
-        {
-          id: '2',
-          title: 'Second Item',
-        },
-        {
-          id: '3',
-          title: 'Third Item',
-        },
-    ]);
+    const [commits,setCommits] = useState([]);
     useEffect(()=>{
       fetchData();
     },[]);
+    
     const fetchData = async ()=>{
       const response = await getCommits();
       const listItems = response.map((item,index)=>{
@@ -37,7 +25,7 @@ const CommitsList = ({navigation})=>{
           message: item.commit.message
         }
       });
-      console.log(listItems);
+      setCommits(listItems);
     }
     
     const renderItem = ({ item }) => (

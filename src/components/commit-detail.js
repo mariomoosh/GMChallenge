@@ -4,12 +4,12 @@ import styles
  from "../styles/commonStyles";
  
 const CommitDetail = ({route,navigation}) =>{
-    
+    const {id,title,author,message} = route.params;
     return (
         <View style={styles.cdetail}>
-            <Text>Hash</Text>
-            <Text>Author</Text>            
-            <Text>Message</Text>
+            <Text>Hash: {title}</Text>
+            <Text>Author {author}</Text>            
+            <Text>Message {message}</Text>
         </View>
     )
 }
