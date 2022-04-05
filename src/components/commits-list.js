@@ -1,13 +1,14 @@
-import React,{useState} from "react";
+import React,{useState, useEffect} from "react";
 import { StatusBar } from "expo-status-bar";
 import {Text, View, StyleSheet,SafeAreaView,FlatList,TouchableOpacity } from "react-native";
-
+import {getCommits} from "../services/commits-services";
 
 const Item = ({ title }) => (
     <View style={styles.item}>
       <Text style={styles.title}>{title}</Text>
     </View>
   );
+
 const CommitsList = ({navigation})=>{
     const [commits,setCommits] = useState([
         {
@@ -23,9 +24,20 @@ const CommitsList = ({navigation})=>{
           title: 'Third Item',
         },
     ]);
-
-    const getCommits = ()=>{
-      
+    useEffect(()=>{
+      fetchData();
+    },[]);
+    const fetchData = async ()=>{
+      const response = await getCommits();
+      const listItems = response.map((item,index)=>{
+        return {
+          id:index,
+          title:item.sha,
+          author: item.author.login,
+          message: item.commit.message
+        }
+      });
+      console.log(listItems);
     }
     
     const renderItem = ({ item }) => (

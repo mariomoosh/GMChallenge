@@ -2,7 +2,7 @@ const SendRequest = async (url,method,postData = null,headers = null)=>{
     try{
         const requestOptions = {
             method,
-            headers: {"Content-Type":"application/json"},
+            headers: headers,
             body: postData !== null ? JSON.stringify(postData) : null
         }
 
