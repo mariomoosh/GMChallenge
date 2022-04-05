@@ -2,6 +2,8 @@ import React from "react";
 import { StatusBar } from "expo-status-bar";
 import { Button, Text, View,StyleSheet } from "react-native-web";
 
+
+
 const Welcome = ({ navigation })=>{    
     return(
         <View style={styles.container}>
