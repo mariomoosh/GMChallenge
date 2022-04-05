@@ -14,7 +14,7 @@ const CommitsList = ({navigation})=>{
     useEffect(()=>{
       fetchData();
     },[]);
-    
+
     const fetchData = async ()=>{
       const response = await getCommits();
       const listItems = response.map((item,index)=>{
@@ -33,8 +33,7 @@ const CommitsList = ({navigation})=>{
                                     navigation.push("CommitDetail",item);
                                 }}>
             <Item title={item.title} />
-        </TouchableOpacity>
-        
+        </TouchableOpacity>        
       );
     return (
         <SafeAreaView style={styles.container}>
